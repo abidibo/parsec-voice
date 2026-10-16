@@ -1,0 +1,17 @@
+name = "Voice"
+id = "voice"
+version = "0.1.0"
+description = "Dictate with your voice, transcribed offline by Whisper: say"
+author = "abidibo"
+homepage = "https://github.com/abidibo/parsec-voice"
+keywords = ["say"]
+exec = "main.py"
+icon = "audio-input-microphone-symbolic"
+
+[config]
+model = "base"          # tiny 75 MB, base 145 MB, small 485 MB (much better for Italian), medium 1.5 GB
+language = ""           # "" detects it; or "it", "en", ... (faster, and short phrases aren't misheard as another language)
+max_seconds = 30        # stop listening after this long, at most 60
+silence_seconds = 1.5   # stop after a pause this long, once you've spoken
+device = "cpu"          # "cuda" for an NVIDIA GPU with CUDA 12 and cuDNN installed
+compute_type = "int8"   # int8 is fastest on a CPU; "float16" on a GPU
